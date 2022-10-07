@@ -1,7 +1,7 @@
-function spinWords(string) {
+const spinWords = (string) => {
   let newString = "";
   let finalStr = "";
-  let count = 0
+  let count = 0;
   const newArr = string.split(" ");
   console.log(newArr);
   for (i = 0; i < newArr.length; i++) {
@@ -10,12 +10,10 @@ function spinWords(string) {
       //   console.log(newString);
       newString = [...newString].reverse().join("");
       //   console.log(newString);
-      
     }
-    count += 1
-    finalStr = 
+    count += 1;
   }
   return newString;
-}
+};
 
 console.log(spinWords("abcdefsd asd"));
