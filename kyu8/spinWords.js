@@ -1,19 +1,9 @@
 const spinWords = (string) => {
-  let newString = "";
-  let finalStr = "";
-  let count = 0;
-  const newArr = string.split(" ");
-  console.log(newArr);
-  for (i = 0; i < newArr.length; i++) {
-    if (newArr[i].length >= 5) {
-      newString += newArr[i];
-      //   console.log(newString);
-      newString = [...newString].reverse().join("");
-      //   console.log(newString);
-    }
-    count += 1;
-  }
-  return newString;
+  return string
+    .split(" ")
+    .map((e) => (e.length >= 5 ? e.split("").reverse().join("") : e))
+    .join(" ");
 };
-
-console.log(spinWords("abcdefsd asd"));
+console.log(2 > 1 ? "Yes" : "No");
+console.log(spinWords("abcdefsd asd")); // "dsfedcba asd"
+console.log(spinWords("how are you doing")); // "dsfedcba asd"
