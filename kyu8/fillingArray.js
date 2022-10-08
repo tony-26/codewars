@@ -1,10 +1,11 @@
-const array = (arr) => {
+const arr = (n) => {
   let newArr = [];
-  for (i = 0; i < arr; i++) {
+  for (i = 0; i < n; i++) {
     newArr.push(i);
   }
   return newArr;
 };
-console.log(array(9)); //4
+console.log(arr()); // []
+console.log(arr(4)); // [0, 1, 2, 3]
 
 // Filling an array
