@@ -12,5 +12,5 @@ const sameCase = (a, b) => {
   }
   return result;
 };
-
+console.log(sameCase(" ", "Z")); // -1
 // check same case
