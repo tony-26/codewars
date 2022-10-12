@@ -6,5 +6,5 @@ const toBinary = (n) => {
   }
   return binary;
 };
-console.log(toBinary(2585)); // 11
+console.log(toBinary(3)); // 11
 //Convert to Binary
