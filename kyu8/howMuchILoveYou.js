@@ -13,6 +13,7 @@ const howMuchILoveYou = (nbPetals) => {
     return anum[nbPetals % 6];
   }
 };
+console.log(howMuchILoveYou(8)); //"a little"
 console.log(howMuchILoveYou(162));
 
 //I love you, a little....
