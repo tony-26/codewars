@@ -1,5 +1,13 @@
 const highAndLow = (numbers) => {
-  arr1.push(numbers.split(" "));
-  for (i = 0; i < arr1.length; i++) {}
+  let output = "";
+  highestToLowest = numbers.split(" ").sort((a, b) => b - a);
+  output =
+    output +
+    highestToLowest[0] +
+    " " +
+    highestToLowest[highestToLowest.length - 1];
+  return output;
 };
 //highest and lowest
+
+console.log(highAndLow("1 2 3"), "3 1");
