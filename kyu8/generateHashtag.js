@@ -1,7 +1,7 @@
 const generateHashtag = (str) => {
   let str1 = "#";
   let str2 = "";
-  if (str.length === 0) {
+  if (str.replace(/\s/g, "").length === 0) {
     return false;
   } else {
     arr1 = str.split(" ");
@@ -12,10 +12,15 @@ const generateHashtag = (str) => {
 
     // console.log(arr1);
   }
-  return str1;
+  if (str1.length > 140) {
+    return false;
+  } else {
+    return str1;
+  }
 };
 
-console.log(generateHashtag("Hello how are you")); // "#HelloHowAreYou"
-console.log(generateHashtag("")); //false
+// console.log(generateHashtag("Hello how are you")); // "#HelloHowAreYou"
+// console.log(generateHashtag("")); //false
+console.log(generateHashtag(" ".repeat(200))); // false
 
 //The Hashtag Generator
