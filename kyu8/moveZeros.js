@@ -1,14 +1,14 @@
 const moveZeros = (arr) => {
   const len = arr.length;
   let count = 0;
-  for (i = 0; i < len; i++) {
+  for (i = 0; i <= len; i++) {
     console.log(arr[i], i);
     if (arr[i] === 0) {
       arr.splice(i, 1);
       count = count + 1;
     }
   }
-  for (i = 0; i < count; i++) {
+  for (i = 1; i <= count; i++) {
     arr.push(0);
   }
   return arr;
