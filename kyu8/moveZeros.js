@@ -1,17 +1,18 @@
 const moveZeros = (arr) => {
-  const len = arr.length;
-  let count = 0;
-  for (i = 0; i <= len; i++) {
-    console.log(arr[i], i);
-    if (arr[i] === 0) {
-      arr.splice(i, 1);
-      count = count + 1;
+  let newArr = [];
+  let len = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] != 0) {
+      newArr.push(arr[i]);
     }
   }
-  for (i = 1; i <= count; i++) {
-    arr.push(0);
+  len = arr.length - newArr.length;
+  for (i = 0; i < len; i++) {
+    console.log(arr.length - newArr.length);
+    newArr.push(0);
+    // console.log(newArr.length);
   }
-  return arr;
+  return newArr;
 };
 // console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1])); // [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]
 console.log(
