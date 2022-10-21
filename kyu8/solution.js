@@ -6,6 +6,7 @@ const solution = (number) => {
     return 0;
   } else {
     for (i = 1; i < number / 3; i++) {
+      console.log(i);
       //   mul3.push(3 * i);
       sum = sum + 3 * i;
     }
