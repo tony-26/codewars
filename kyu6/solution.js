@@ -17,7 +17,7 @@ const solution = (number) => {
   }
   return sum;
 };
-console.log(solution(10)); // 23
-console.log(solution(2801)); // 1831668
+// console.log(solution(10)); // 23
+console.log(solution(20)); // 78
 
 // multiples of 3 or 5
