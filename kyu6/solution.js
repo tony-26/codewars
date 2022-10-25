@@ -6,13 +6,15 @@ const solution = (number) => {
     return 0;
   } else {
     for (i = 1; i < number / 3; i++) {
-      console.log(i);
+      // console.log(i);
       //   mul3.push(3 * i);
       sum = sum + 3 * i;
     }
     for (i = 1; i < number / 5; i++) {
-      //   mul5.push(5 * i);
-      sum = sum + 5 * i;
+      if (i % 3 !== 0) {
+        //   mul5.push(5 * i);
+        sum = sum + 5 * i;
+      }
     }
   }
   return sum;
