@@ -2,9 +2,9 @@ function evalObject(value) {
   var result = 0;
   switch (value.operation) {
     case "+":
-      result = value + value;
+      result = value.a + value.b;
     case "-":
-      result = value - value;
+      result = value.a - value.b;
     case "/":
       result = value.a / value.b;
     case "*":
@@ -16,4 +16,5 @@ function evalObject(value) {
   }
   return result;
 }
-Test.assertEquals(evalObject({ a: 1, b: 1, operation: "+" }));
+console.log(evalObject({ a: 1, b: 1, operation: "+" }));
+// Switch/Case
