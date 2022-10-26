@@ -20,11 +20,12 @@ function six() {
   return 6;
 }
 function seven(arg) {
-  if (typeof arg === "number") {
-    return 7 * arg;
-  } else {
-    return 7;
-  }
+  console.log(arg);
+  // if (typeof arg === "number") {
+  return 7 * arg;
+  // } else {
+  //   return 7;
+  // }
 }
 function eight() {
   return 8;
@@ -33,25 +34,31 @@ function nine() {
   return 9;
 }
 
-function plus() {}
+function plus(arg) {
+  return [arg, "+"];
+}
 function minus() {}
 function times(arg) {
-  return arg;
+  // console.log(arg);
+  return [arg, "*"];
 }
 function dividedBy() {}
 
-console.log(seven(times(zero)), 0);
-console.log(seven(times(one())), 7);
-console.log(seven(times(two())), 14);
-console.log(seven(times(three())), 21);
-console.log(seven(times(four())), 28);
+// console.log(seven(times(zero())) === 0);
+// console.log(seven(times(one())) === 7);
+// console.log(seven(times(two())) === 14);
+// console.log(seven(times(three())) === 21);
+// console.log(seven(times(four())) === 28);
 console.log(seven(times(five())), 35);
-console.log(seven(times(six())), 42);
-console.log(seven(times(seven())), 49);
-console.log(seven(times(eight())), 56);
-console.log(seven(times(nine())), 63);
-//V1: return 7(no input, arg = undefined), V2: return 7 * arg(input)
+// console.log(seven(times(six())), 42);
+// console.log(seven(times(seven())), 49);
+// console.log(seven(times(eight())) === 56);
+// console.log(seven(times(nine())) === 63);
+// V1: return 7(no input, arg = undefined), V2: return 7 * arg(input)
 
+// console.log(seven(plus(one())), 8);
+console.log(seven(plus(two())), 9);
+// console.log(seven(plus(seven())), 14);
 // console.log(four(plus(nine())), 13);
 // console.log(eight(minus(three())), 5);
 // console.log(six(dividedBy(two())), 3);
