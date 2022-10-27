@@ -7,6 +7,5 @@ const squareDigits = (num) => {
   }
   return Number(value);
 };
-// console.log((3212).length);
 console.log(squareDigits(3212)); // 9414
 //square every digit
