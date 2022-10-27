@@ -1,12 +1,11 @@
 const squareDigits = (num) => {
   let add = 0;
   let value = "";
-  for (i = 0; i <= num.toString().length; i++) {
-    add = num.toString()[i] * num.toString()[i];
+  for (i = 0; i < num.toString().length; i++) {
+    add = Number(num.toString()[i] * num.toString()[i]);
     value = value + add;
-    console.log(add, num.toString()[i], value);
   }
-  return value;
+  return Number(value);
 };
 // console.log((3212).length);
 console.log(squareDigits(3212)); // 9414
