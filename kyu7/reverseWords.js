@@ -5,7 +5,7 @@ const reverseWords = (str) => {
     newStr = newStr + str[i].split("").reverse();
   }
   return newStr;
-  // return str.split("").reverse().join("");
+  return str.split("").reverse().join("");
 };
 // console.log(reverseWords("apple"), "elppa");
 console.log(
