@@ -3,7 +3,6 @@ String.prototype.toJadenCase = function () {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 };
-// "hello".toJadenCase();
 
 console.log("how are you".toJadenCase() === "How Are You");
 
