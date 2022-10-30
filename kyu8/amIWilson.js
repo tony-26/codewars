@@ -10,6 +10,6 @@ const amIWilson = (p) => {
   }
 };
 // console.log(amIWilson(5)); // true
-// console.log(amIWilson(9)); // false
+console.log(amIWilson(9)); // false
 console.log(amIWilson(563)); // true
 // wilson prime
