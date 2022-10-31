@@ -4,4 +4,4 @@ const makeNegative = (num) => {
   }
   return 0 - num;
 };
-console.log(makeNegative(42), -42);
+console.log(makeNegative(42) === -42);
