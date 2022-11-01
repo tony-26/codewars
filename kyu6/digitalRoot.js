@@ -1,12 +1,12 @@
 const digitalRoot = (n) => {
   let sum = 0;
-  while (sum.toString().length >= 2) {
-    for (i = 0; i < n.toString().length; i++) {
-      //   console.log(n.toString()[i]);
-      sum = sum + Number(n.toString()[i]);
-    }
+  for (i = 0; i < n.toString().length; i++) {
+    //   console.log(n.toString()[i]);
+    sum = sum + Number(n.toString()[i]);
   }
-
+  if (sum.toString().length != 1) {
+    return digitalRoot(sum);
+  }
   return sum;
 };
 
