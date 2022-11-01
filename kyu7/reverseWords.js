@@ -3,7 +3,7 @@ const reverseWords = (str) => {
   const len = str.split(" ").length;
 
   for (let i = 0; i < len - 1; i++) {
-    newStr = newStr + str[i].split("").reverse();
+    newStr = newStr + str.split(" ")[i].reverse();
   }
   return newStr;
   // return str.split("").reverse().join("");

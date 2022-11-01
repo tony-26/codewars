@@ -1,12 +1,15 @@
 const digitalRoot = (n) => {
   let sum = 0;
-  for (i = 0; i < n.toString().length; i++) {
-    sum = sum + Number(n.toString()[i]);
-  }
+  n.toString()
+    .split("")
+    .forEach((e) => {
+      sum = sum + Number(e);
+    });
   if (sum.toString().length != 1) {
     return digitalRoot(sum);
+  } else {
+    return sum;
   }
-  return sum;
 };
 
 console.log(digitalRoot(16), 7);
