@@ -22,7 +22,7 @@ function six() {
 function seven(arg) {
   console.log(arg);
   // if (typeof arg === "number") {
-  return 7 * arg;
+  return 7 * Number(arg[1]);
   // } else {
   //   return 7;
   // }
@@ -57,7 +57,7 @@ console.log(seven(times(five())), 35);
 // V1: return 7(no input, arg = undefined), V2: return 7 * arg(input)
 
 // console.log(seven(plus(one())), 8);
-console.log(seven(plus(two())), 9);
+// console.log(seven(plus(two())), 9);
 // console.log(seven(plus(seven())), 14);
 // console.log(four(plus(nine())), 13);
 // console.log(eight(minus(three())), 5);
