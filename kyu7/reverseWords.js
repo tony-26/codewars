@@ -1,16 +1,21 @@
 const reverseWords = (str) => {
-  let newStr = "";
-  const len = str.split(" ").length;
+  let finalStr = "";
+  let n = "";
+  let newArr = [];
 
-  for (let i = 0; i < len - 1; i++) {
-    newStr = newStr + str.split(" ")[i].reverse();
+  newArr = str.split(" ");
+  // console.log(newArr);
+  for (i = 0; i < newArr.length; i++) {
+    n = newArr[i].split("").reverse().join("");
+    // console.log(n);
+    finalStr = finalStr + n + " ";
   }
-  return newStr;
-  // return str.split("").reverse().join("");
+  finalStr = finalStr.slice(0, -1);
+  return finalStr;
 };
 // console.log(reverseWords("apple"), "elppa");
 console.log(
-  reverseWords("The quick brown fox jumps over the lazy dog."),
-  "ehT kciuq nworb xof spmuj revo eht yzal .god"
+  reverseWords("The quick brown fox jumps over the lazy dog.") ===
+    "ehT kciuq nworb xof spmuj revo eht yzal .god"
 );
 //Reverse words
