@@ -22,7 +22,7 @@ function six() {
 function seven(arg) {
   console.log(arg);
   // if (typeof arg === "number") {
-  return 7 * Number(arg[1]);
+  return 7 + arg[1] + arg[0];
   // } else {
   //   return 7;
   // }
