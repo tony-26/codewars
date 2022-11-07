@@ -1,9 +1,5 @@
 const findOdd = (numberArr) => {
   numberArr.sort((a, b) => b - a);
-  console.log(numberArr);
-  if (numberArr.length === 0) {
-    return 0;
-  }
   let i = 0;
   let currentNum = numberArr[0];
   let currentCount = 1;
