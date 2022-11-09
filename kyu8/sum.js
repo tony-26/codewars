@@ -1,11 +1,7 @@
 const sum = (numbers) => {
-  if (numbers.length === 0) {
-    return 0;
-  } else {
-    numbers.reduce((prevReturnedValue, currentNum) => {
-      return currentNum + prevReturnedValue;
-    });
-  }
+  return numbers.reduce((prevReturnedValue, currentNum) => {
+    return currentNum + prevReturnedValue;
+  }, 0);
 };
 console.log(sum([]), 0);
 console.log(sum([1, 5.2, 4, 0, -1]), 9.2);

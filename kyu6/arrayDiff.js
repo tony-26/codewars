@@ -19,14 +19,18 @@
 //   return newArr;
 // };
 
-const arrayDiff = (a, b) => {
-  return a.reduce((r, e) => {
-    if (!b.includes(e)) {
-      r.push(e);
-    }
-    return r;
-  }, []);
-};
+// const arrayDiff = (a, b) => {
+//   return a.reduce((r, e) => {
+//     if (!b.includes(e)) {
+//       return r.concat(e);
+//     } else {
+//       return r;
+//     }
+//   }, []);
+// };
+
+const arrayDiff = (a, b) =>
+  a.reduce((r, e) => (!b.includes(e) ? r.concat(e) : r), []);
 
 // console.log(arrayDiff([1, 2], [1]), [2]);
 // console.log(arrayDiff([1, 2, 2], [1]) === [2, 2]);
