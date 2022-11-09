@@ -1,8 +1,7 @@
 const SeriesSum = (n) => {
-  let count = 0;
   let sum = 0;
+  let count = 0;
   for (i = 1; i < n + 1; i++) {
-    // console.log(count, i);
     sum = sum + 1 / (1 + count);
     count = count + 3;
   }
