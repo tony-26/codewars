@@ -9,3 +9,4 @@ const validatePIN = (pin) => {
     return false;
   }
 };
+//Regex validate PIN code
