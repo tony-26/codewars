@@ -17,3 +17,4 @@ console.log(
   "N ffns bt,\nYr wrtng s mng th wrst 'v vr rd"
 );
 console.log(disemvowel("What are you, a communist?"), "Wht r y,  cmmnst?");
+//Disemvowel trolls
