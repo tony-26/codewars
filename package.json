@@ -1,0 +1,22 @@
+{
+  "name": "codewars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tony-26/codewars.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tony-26/codewars/issues"
+  },
+  "homepage": "https://github.com/tony-26/codewars#readme",
+  "devDependencies": {
+    "mocha": "^10.1.0"
+  }
+}
