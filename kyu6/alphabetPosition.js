@@ -1,5 +1,5 @@
 const alphabetPosition = (text) => {
-  let value = 0;
+  let value = "";
   let arr = [];
   const number = {
     a: 1,
@@ -29,20 +29,22 @@ const alphabetPosition = (text) => {
     y: 25,
     z: 26,
   };
+  arr = text.toLowerCase().split("");
   for (i = 0; i < text.length; i++) {
-    arr = text.split("");
-    value = value + number[arr[i]];
+    if (number[arr[i]] === undefined) {
+      continue;
+    }
+    value = value === "" ? number[arr[i]] : value + " " + number[arr[i]];
   }
-  return value;
+
+  return value.toString();
 };
-console.log(
-  alphabetPosition("The sunset sets at twelve o' clock."),
-  "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
-);
-console.log(
-  alphabetPosition("The narwhal bacons at midnight."),
-  "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20"
-);
+console.log([alphabetPosition("T'he"), "20 8 5"]);
+//The sunset sets at twelve o' clock.
+// console.log(
+//   alphabetPosition("The narwhal bacons at midnight."),
+//   "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20"
+// );
 
 // function count(string) {
 //   var alphabet = [
