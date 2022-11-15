@@ -101,11 +101,6 @@ function seven(value) {
   } else if (value[1] === "*") {
     return 7 * value[0];
   }
-  // if (typeof arg === "number") {
-  // return 7 + arg[1] + arg[0];
-  // } else {
-  //   return 7;
-  // }
 }
 function eight(value) {
   if (value === undefined) {
@@ -146,7 +141,6 @@ function minus(arg) {
 }
 function times(arg) {
   let value = [];
-  // console.log(arg);
   value = [arg, "*"];
   return value;
 }
