@@ -175,3 +175,19 @@ console.log(five(dividedBy(six)));
 // console.log(four(plus(nine())), 13);
 // console.log(eight(minus(three())), 5);
 // console.log(six(dividedBy(two())), 3);
+const plusV2 = (a) => {
+  return (b) => {
+    return a + b;
+  };
+};
+const oneV2 = (a) => {
+  return a ? a(1) : 1;
+};
+
+const twoV2 = (a) => {
+  return a ? a(2) : 2;
+};
+
+const threeV2 = (a) => {
+  return a ? a(3) : 3;
+};
