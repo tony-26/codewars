@@ -1,6 +1,6 @@
 const DNAStrand = (dna) => {
   let newStr = "";
-  var change = { A: "T", C: "G", T: "A", G: "C" };
+  const change = { A: "T", C: "G", T: "A", G: "C" };
   for (i = 0; i < dna.length; i++) {
     newStr = newStr + change[dna[i]];
   }
