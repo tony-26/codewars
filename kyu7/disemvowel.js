@@ -1,18 +1,4 @@
-// const str = "abc";
-// console.log(str.replace("a", ""));
 const disemvowel = (str) => {
-  //   return str
-  //     .replace(/a/g, "")
-  //     .replace(/e/g, "")
-  //     .replace(/i/g, "")
-  //     .replace(/o/g, "")
-  //     .replace(/u/g, "")
-  //     .replace(/O/g, "")
-  //     .replace(/A/g, "")
-  //     .replace(/E/g, "")
-  //     .replace(/I/g, "")
-  //     .replace(/U/g, "");
-
   return str.replace(/[aeiou]/gi, "");
 };
 console.log(
