@@ -39,52 +39,6 @@ const alphabetPosition = (text) => {
 
   return value.toString();
 };
-console.log([alphabetPosition("T'he"), "20 8 5"]);
-//The sunset sets at twelve o' clock.
-// console.log(
-//   alphabetPosition("The narwhal bacons at midnight."),
-//   "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20"
-// );
 
-// function count(string) {
-//   var alphabet = [
-//     "a",
-//     "b",
-//     "c",
-//     "d",
-//     "e",
-//     "f",
-//     "g",
-//     "h",
-//     "i",
-//     "j",
-//     "k",
-//     "l",
-//     "m",
-//     "n",
-//     "o",
-//     "p",
-//     "q",
-//     "r",
-//     "s",
-//     "t",
-//     "u",
-//     "v",
-//     "w",
-//     "x",
-//     "y",
-//     "z",
-//   ];
-
-//   var splitted_string = string.split(string);
-
-//   var count = 0;
-//   for (i = 0; i < splitted_string.length; i++) {
-//     var letterPosition = alphabet.indexOf(splitted_string[i]) + 1;
-//     count = count + letterPosition;
-//   }
-//   return count;
-// }
-
-// console.log(count("az")); // returns 27 in the console
+console.log(alphabetPosition("az")); // returns 27 in the console
 //Replace With Alphabet Position
