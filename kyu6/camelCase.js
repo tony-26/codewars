@@ -1,7 +1,16 @@
 const solution = (string) => {
-  for (i = 0; i < string.length; i++) {
-    if (string[i].toUpperCase() === string[i]) {
-      string.charAt(i);
+  let str = string;
+  let i = 0;
+  while (true) {
+    if (str[i].toUpperCase() === str[i]) {
+      str = str.slice(0, i) + " " + str.slice(i);
+      i = i + 1;
+    }
+    i = i + 1;
+    if (i >= str.length) {
+      break;
     }
   }
+  return str;
 };
+console.log(solution("camelCaseHello")); //camel Case

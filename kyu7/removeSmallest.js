@@ -1,15 +1,15 @@
 const removeSmallest = (numbers) => {
-  let arr = [];
-  let value = numbers[0];
+  const numbersCopy = [...numbers];
+  let value = numbersCopy[0];
   let count = 0;
-  for (i = 0; i < numbers.length; i++) {
-    if (numbers[i] < value) {
-      value = numbers[i];
+  for (i = 0; i < numbersCopy.length; i++) {
+    if (numbersCopy[i] < value) {
+      value = numbersCopy[i];
       count = i;
     }
   }
-  numbers.splice(count, 1);
-  return numbers;
+  numbersCopy.splice(count, 1);
+  return numbersCopy;
 };
 // console.log(removeSmallest([1, 2, 3, 4, 5]), [2, 3, 4, 5]);
 // console.log(removeSmallest([5, 3, 2, 1, 4]), [5, 3, 2, 4]);
