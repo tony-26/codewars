@@ -13,4 +13,4 @@ const solution = (string) => {
   }
   return str;
 };
-console.log(solution("camelCaseHello")); //camel Case
+console.log(solution("camelCaseHello"));
