@@ -5,8 +5,6 @@ const sumToIndex = (arr, index) => {
   }
   return sum;
 };
-// console.log(sumToIndex([2, 3, 4, 5], 2)); // 5
-// console.log(sumToIndex([2, 3, 4, 5], 0)); // 0
 
 const sumFromIndex = (arr, index) => {
   let sum = 0;
@@ -15,12 +13,9 @@ const sumFromIndex = (arr, index) => {
   }
   return sum;
 };
-// console.log(sumFromIndex([2, 3, 4, 5], 2)); // 5
-// console.log(sumFromIndex([2, 3, 4, 5], 3)); // 0
 
 const findEvenIndex = (arr) => {
   for (let i = 0; i < arr.length; i++) {
-    //console.log(i, sumToIndex(arr, i), sumFromIndex(arr, i));
     if (sumToIndex(arr, i) === sumFromIndex(arr, i)) {
       return i;
     }
