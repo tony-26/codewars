@@ -21,5 +21,5 @@ function sumStrings(a, b) {
     sum = i === ML && carry ? carry * 10 + t + sum : t + sum;
   }
 
-  return sum;
+  return sum.shift();
 }
