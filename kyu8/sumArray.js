@@ -1,4 +1,5 @@
 const sumArray = (array) => {
+  let len = array.length;
   let sum = 0;
   if (array.length <= 2) {
     return 0;
@@ -10,7 +11,7 @@ const sumArray = (array) => {
     });
     array.shift();
     array.pop();
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < len; i++) {
       sum = sum + array[i];
     }
     return sum;
