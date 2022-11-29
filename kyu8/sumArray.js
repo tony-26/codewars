@@ -1,4 +1,7 @@
 const sumArray = (array) => {
+  if (array === null) {
+    return 0;
+  }
   let len = array.length;
   let sum = 0;
   if (array.length <= 2) {
@@ -11,16 +14,17 @@ const sumArray = (array) => {
     });
     array.shift();
     array.pop();
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < len - 2; i++) {
+      //console.log(array[i]);
       sum = sum + array[i];
     }
     return sum;
   }
 };
-console.log(sumArray(null), 0);
-console.log(sumArray([]), 0);
-console.log(sumArray([3]), 0);
-console.log(sumArray([3, 5]), 0);
+// console.log(sumArray(null), 0);
+// console.log(sumArray([]), 0);
+// console.log(sumArray([3]), 0);
+// console.log(sumArray([3, 5]), 0);
 console.log(sumArray([6, 2, 1, 8, 10]), 16);
 console.log(sumArray([0, 1, 6, 10, 10]), 17);
 console.log(sumArray([-6, -20, -1, -10, -12]), -28);
