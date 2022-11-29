@@ -1,30 +1,28 @@
 const sumArray = (array) => {
-  if (array === null) {
+  if (!array) {
     return 0;
   }
-  let len = array.length;
-  let sum = 0;
   if (array.length <= 2) {
     return 0;
-  } else {
-    array.sort(function (a, b) {
-      if (a > b) return -1;
-      if (a < b) return 1;
-      return 0;
-    });
-    array.shift();
-    array.pop();
-    for (let i = 0; i < len - 2; i++) {
-      //console.log(array[i]);
-      sum = sum + array[i];
-    }
-    return sum;
   }
+  let sum = 0;
+  let min = array[0];
+  let max = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < min) {
+      min = array[i];
+    }
+    if (array[i] > max) {
+      max = array[i];
+    }
+    sum = sum + array[i];
+  }
+  return sum - min - max;
 };
-// console.log(sumArray(null), 0);
-// console.log(sumArray([]), 0);
-// console.log(sumArray([3]), 0);
-// console.log(sumArray([3, 5]), 0);
+console.log(sumArray(null), 0);
+console.log(sumArray([]), 0);
+console.log(sumArray([3]), 0);
+console.log(sumArray([3, 5]), 0);
 console.log(sumArray([6, 2, 1, 8, 10]), 16);
 console.log(sumArray([0, 1, 6, 10, 10]), 17);
 console.log(sumArray([-6, -20, -1, -10, -12]), -28);
