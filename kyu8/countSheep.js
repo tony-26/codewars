@@ -1,7 +1,7 @@
 var countSheep = function (num) {
   let str = "";
   if (num === 0) {
-    return str;
+    return "";
   } else {
     for (i = 0; i < num; i++) {
       str = str + (i + 1) + " sheep...";
