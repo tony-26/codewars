@@ -1,7 +1,10 @@
 const stray = (numbers) => {
+  let check = numbers[0];
   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] !== numbers[i + 1]) {
-      return numbers[i + 1];
+    if (check !== numbers[i]) {
+      return numbers[i];
+    } else {
+      check = numbers[i];
     }
   }
 };
