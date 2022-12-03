@@ -2,19 +2,19 @@ const findOutlier = (integers) => {
   let even = 0;
   let odd = 0;
   for (let i = 0; i < 3; i++) {
-    if (integers[i] % 2 === 0) {
+    if (Math.abs(integers[i]) % 2 === 0) {
       even += 1;
-    } else if (integers[i] % 2 !== 0) {
+    } else {
       odd += 1;
     }
   }
   //console.log(even, odd);
   let numType = even > 1 ? "odd" : "even";
   for (let i = 0; i < integers.length; i++) {
-    if (numType === "odd" && integers[i] % 2 === 1) {
+    if (numType === "odd" && Math.abs(integers[i]) % 2 === 1) {
       return integers[i];
     }
-    if (numType === "even" && integers[i] % 2 !== 1) {
+    if (numType === "even" && Math.abs(integers[i]) % 2 !== 1) {
       return integers[i];
     }
   }
