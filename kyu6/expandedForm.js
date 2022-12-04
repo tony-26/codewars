@@ -1,9 +1,11 @@
 function expandedForm(num) {
-  for (i = 0; i < num.length; i++) {
+  let str;
+  for (let i = 0; i < num.length; i++) {
     if (num[i] !== 0) {
-      return num[i] * (num.length - 1);
+      str = (str + num[i] * (num.length - i - 1)).toString() + " + ";
     }
   }
+  return str;
 }
 
 console.log(expandedForm(12)); //"10 + 2"
