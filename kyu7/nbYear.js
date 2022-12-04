@@ -1,6 +1,9 @@
 function nbYear(p0, percent, aug, p) {
   let year = 1;
   let population = false;
+  if (p0 >= p) {
+    return 0;
+  }
   while (!population) {
     if (p0 + (p0 * percent) / 100 + aug > p) {
       //console.log(p0 + p0 * percent + aug);
