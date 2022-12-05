@@ -1,8 +1,9 @@
 function longest(s1, s2) {
-  const str = s1 + s2;
+  let str = s1 + s2;
   let arr = str.split("");
   const newStr = arr
     .filter((item, index) => arr.indexOf(item) === index)
+    .sort()
     .join("");
   return newStr;
 }
