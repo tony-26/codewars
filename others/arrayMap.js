@@ -8,9 +8,9 @@
 // console.log(double, ["even", "odd", "even", "odd"]);
 const filter = [2, 5, 4, 7].filter((e) => {
   if (e % 2 === 0) {
-    return "even";
+    return true;
   } else {
-    return "odd";
+    return false;
   }
 });
 console.log(filter);
