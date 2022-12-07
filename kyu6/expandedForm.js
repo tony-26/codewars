@@ -1,8 +1,9 @@
 function expandedForm(num) {
-  let str;
+  let str = "";
   for (let i = 0; i < num.length; i++) {
     if (num[i] !== 0) {
-      str = (str + num[i] * (num.length - i - 1)).toString() + " + ";
+      str = str + (num[i] * (num.length - i - 1)).toString() + " + ";
+      console.log(str);
     }
   }
   return str;
