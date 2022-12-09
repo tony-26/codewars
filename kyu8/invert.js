@@ -2,8 +2,8 @@ const invert = (array) => {
   if (array.length === 0) {
     return array;
   } else {
-    array.forEach((e) => {
-      return e * -1;
+    array.map((e) => {
+      return "-" + e;
     });
   }
 };
