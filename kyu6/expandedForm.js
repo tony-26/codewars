@@ -1,12 +1,14 @@
 function expandedForm(num) {
-  let str = "";
-  for (let i = 0; i < num.length; i++) {
-    if (num[i] !== 0) {
-      str = str + (num[i] * (num.length - i - 1)).toString() + " + ";
-      console.log(str);
+  let str = num.toString(); //"12"
+  let newStr = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== 0) {
+      newStr = newStr + str[i] * (str.length - i - 1);
+      //console.log(str);
     }
   }
-  return str;
+  return newStr;
 }
 
 console.log(expandedForm(12)); //"10 + 2"
