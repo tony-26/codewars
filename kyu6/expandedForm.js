@@ -5,8 +5,8 @@ function expandedForm(num) {
   for (let i = 0; i < str.length; i++) {
     if (str[i] !== 0) {
       newStr = newStr + str[i] * (str.length - i - 1);
-      //console.log(str);
     }
+    console.log(str[i], newStr);
   }
   return newStr + " + " + str[str.length - 1];
 }
