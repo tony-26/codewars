@@ -34,7 +34,7 @@
 //   }
 // };
 //console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
-const bsortMutate = (arr) => {
+const sortArray = (arr) => {
   let indexArr = [];
   //console.log("executed");
   let currOddNum, currOddIndex, nextOddNum, nextOddIndex;
@@ -80,9 +80,9 @@ const bsortMutate = (arr) => {
   // } else {
   //   return bsortMutate(arr);
   // }
-  return arr;
 };
 
-console.log(bsortMutate([5, 6, 1, 2, 3])); //[1, 6, 3, 2, 5]
+console.log(sortArray([5, 6, 1, 2, 3])); //[1, 6, 3, 2, 5]
+console.log(sortArray([5, 3, 2, 8, 1, 4]), [1, 3, 2, 8, 5, 4]);
 
 //console.log(sortArray([5, 6, 1, 2, 3])); // [3,2,1,4,5]
