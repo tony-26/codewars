@@ -44,7 +44,17 @@ const bsortMutate = (arr) => {
       indexArr.push(i);
     }
   }
-  console.log(indexArr);
+  for (let i = 0; i < indexArr.length; i++) {
+    if (originalArry[indexArr[i]] > originalArry[indexArr[i + 1]]) {
+      currOddNum = originalArry[indexArr[i + 1]];
+      nextOddNum = originalArry[indexArr[i]];
+      originalArry[indexArr[i]] = currOddNum;
+      originalArry[indexArr[i + 1]] = nextOddNum;
+    }
+  }
+  return originalArry;
+
+  //console.log(indexArr);
   // for (let i = 0; i < arr.length; i++) {
   //   if (currOddNum === undefined) {
   //     if (arr[i] % 2 === 1) {
@@ -73,6 +83,6 @@ const bsortMutate = (arr) => {
   return arr;
 };
 
-console.log(bsortMutate([5, 6, 1, 2, 3])); //
+console.log(bsortMutate([5, 6, 1, 2, 3])); //[1, 6, 3, 2, 5]
 
 //console.log(sortArray([5, 6, 1, 2, 3])); // [3,2,1,4,5]
