@@ -4,15 +4,12 @@ function sumStrings(a, b) {
   let reverseA = a.split("").reverse();
   let reverseB = b.split("").reverse();
   for (let i = 0; i < reverseA.length; i++) {
-    if (Number(reverseA[i]) + Number(reverseB[i]) > 10) {
-      currentValue =
-        (Number(reverseA[i]) + Number(reverseB[i]) - 10 + carry).toString() +
-        currentValue;
+    const sum = Number(reverseA[i]) + Number(reverseB[i]);
+    if (sum > 10) {
+      currentValue = (sum - 10 + carry).toString() + currentValue;
       carry = 1;
     } else {
-      currentValue =
-        (Number(reverseA[i]) + Number(reverseB[i]) + carry).toString() +
-        currentValue;
+      currentValue = (sum + carry).toString() + currentValue;
       carry = 0;
     }
   }
