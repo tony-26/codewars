@@ -14,10 +14,12 @@ console.log(equalLengthAB("9999", "123456"), ["009999", "123456"]);
 console.log(equalLengthAB("12", "99"), ["12", "99"]);
 
 function sumStrings(a, b) {
+  const [newA, newB] = equalLengthAB(a, b);
   let carry = 0;
   let currentValue = "";
-  let reverseA = a.split("").reverse();
-  let reverseB = b.split("").reverse();
+  let reverseA = newA.split("").reverse();
+  let reverseB = newB.split("").reverse();
+
   for (let i = 0; i < reverseA.length; i++) {
     const sum = Number(reverseA[i]) + Number(reverseB[i]) + carry;
     if (sum >= 10) {
