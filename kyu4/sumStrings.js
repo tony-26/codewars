@@ -9,9 +9,9 @@ const equalLengthAB = (a, b) => {
   }
   return [newA, newB];
 };
-console.log(equalLengthAB("123456", "9999"), ["123456", "009999"]);
-console.log(equalLengthAB("9999", "123456"), ["009999", "123456"]);
-console.log(equalLengthAB("12", "99"), ["12", "99"]);
+// console.log(equalLengthAB("123456", "9999"), ["123456", "009999"]);
+// console.log(equalLengthAB("9999", "123456"), ["009999", "123456"]);
+// console.log(equalLengthAB("12", "99"), ["12", "99"]);
 
 function sumStrings(a, b) {
   const [newA, newB] = equalLengthAB(a, b);
@@ -30,13 +30,18 @@ function sumStrings(a, b) {
       carry = 0;
     }
   }
-
-  return currentValue;
+  if (carry === 1) {
+    return carry + currentValue;
+  } else {
+    return currentValue;
+  }
 }
-console.log(sumStrings("12345", "11111") === "23456");
-console.log(sumStrings("12345", "11117") === "23462");
-console.log(sumStrings("12345", "11187") === "23532");
-console.log(sumStrings("12345", "11157")); //'23502'
-console.log(sumStrings("123456", "176544")); //'300000'
-//console.log(sumStrings("123456", "876544")); //'1000000'
-console.log(sumStrings("123456", "9999")); //'133455'
+// console.log(sumStrings("12345", "11111") === "23456");
+// console.log(sumStrings("12345", "11117") === "23462");
+// console.log(sumStrings("12345", "11187") === "23532");
+// console.log(sumStrings("12345", "11157")); //'23502'
+// console.log(sumStrings("123456", "176544")); //'300000'
+
+// console.log(sumStrings("123456", "9999")); //'133455'
+// console.log(sumStrings("123456", "876544")); //'1000000'
+console.log(sumStrings("00103", "08567")); //'8670'
