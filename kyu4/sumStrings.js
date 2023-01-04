@@ -43,7 +43,6 @@ function sumStrings(a, b) {
     return removeStartingZeros(currentValue);
   }
 }
-
 // console.log(sumStrings("12345", "11111") === "23456");
 // console.log(sumStrings("12345", "11117") === "23462");
 // console.log(sumStrings("12345", "11187") === "23532");
