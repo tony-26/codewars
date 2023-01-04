@@ -2,21 +2,25 @@ const sortArray = (arr) => {
   let indexArr = [];
   //console.log("executed");
   let currOddNum, currOddIndex, nextOddNum, nextOddIndex;
-  const originalArry = [...arr];
-  for (let i = 0; i < originalArry.length; i++) {
-    if (originalArry[i] % 2 !== 0) {
+  const arrCopy = [...arr];
+  for (let i = 0; i < arrCopy.length; i++) {
+    if (arrCopy[i] % 2 !== 0) {
       indexArr.push(i);
     }
   }
   for (let i = 0; i < indexArr.length; i++) {
-    if (originalArry[indexArr[i]] > originalArry[indexArr[i + 1]]) {
-      currOddNum = originalArry[indexArr[i + 1]];
-      nextOddNum = originalArry[indexArr[i]];
-      originalArry[indexArr[i]] = currOddNum;
-      originalArry[indexArr[i + 1]] = nextOddNum;
+    if (arrCopy[indexArr[i]] > arrCopy[indexArr[i + 1]]) {
+      currOddNum = arrCopy[indexArr[i + 1]];
+      nextOddNum = arrCopy[indexArr[i]];
+      arrCopy[indexArr[i]] = currOddNum;
+      arrCopy[indexArr[i + 1]] = nextOddNum;
     }
   }
-  return originalArry;
+  if (arrCopy.join("-") === arr.join("-")) {
+    return arrCopy;
+  } else {
+    return sortArray(arrCopy);
+  }
 };
 
 console.log(sortArray([5, 6, 1, 2, 3])); //[1, 6, 3, 2, 5]

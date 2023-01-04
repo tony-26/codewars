@@ -12,7 +12,14 @@ const equalLengthAB = (a, b) => {
 // console.log(equalLengthAB("123456", "9999"), ["123456", "009999"]);
 // console.log(equalLengthAB("9999", "123456"), ["009999", "123456"]);
 // console.log(equalLengthAB("12", "99"), ["12", "99"]);
-
+const removeStartingZeros = (str) => {
+  if (str[0] === "0") {
+    return removeStartingZeros(str.split("").slice(1).join(""));
+  } else {
+    return str;
+  }
+};
+console.log(removeStartingZeros("00000123")); //"123"
 function sumStrings(a, b) {
   const [newA, newB] = equalLengthAB(a, b);
   let carry = 0;
@@ -31,11 +38,12 @@ function sumStrings(a, b) {
     }
   }
   if (carry === 1) {
-    return carry + currentValue;
+    return removeStartingZeros(carry + currentValue);
   } else {
-    return currentValue;
+    return removeStartingZeros(currentValue);
   }
 }
+
 // console.log(sumStrings("12345", "11111") === "23456");
 // console.log(sumStrings("12345", "11117") === "23462");
 // console.log(sumStrings("12345", "11187") === "23532");
