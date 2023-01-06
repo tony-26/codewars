@@ -14,10 +14,7 @@ function gimme(triplet) {
     min = triplet[2];
   }
   return index;
-  //   for (let i = 0; i < 3; i++) {
-  //     if (triplet[i] < triplet[i + 1]) {
-  //       index = i;
-  //       min = triplet[i];
-  //     }
-  //   }
 }
+console.log(gimme([2, 3, 1], 0));
+console.log(gimme([2.1, 3.2, 1.4], 0));
+console.log(gimme([-2, -3.2, 1], 0));
