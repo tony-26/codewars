@@ -3,7 +3,7 @@
 const arr = [3, 4, 5, 6, 7, 8, 9];
 console.log(
   arr.reduce((prevReturnedValue, currentNum) => {
-    console.log(prevReturnedValue, currentNum);
+    //console.log(prevReturnedValue, currentNum);
     if (currentNum % 2 !== 0) {
       return currentNum + prevReturnedValue;
     } else {
