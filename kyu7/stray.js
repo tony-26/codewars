@@ -1,5 +1,8 @@
 const stray = (numbers) => {
-  let uniqueNum = [...new Set(numbers)];
-  return uniqueNum;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] !== numbers[i + 1] && numbers[i] !== numbers[i - 1]) {
+      return numbers[i];
+    }
+  }
 };
-console.log(stray([1, 1, 2])); //2
+console.log(stray([1, 1, 2]), 2);
