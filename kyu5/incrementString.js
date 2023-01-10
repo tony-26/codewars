@@ -21,17 +21,17 @@ const findIndex = (str) => {
   }
   return 0;
 };
-console.log(findIndex("abc321")); //3
-//console.log(findIndex("abc321ef45")); //8
-//console.log(findIndex("abc")); //3
-//console.log(findIndex("321")); //0
+// console.log(findIndex("abc321")); //3
+// console.log(findIndex("abc321ef45")); //8
+// console.log(findIndex("abc")); //3
+// console.log(findIndex("321")); //0
 
 function incrementString(string) {
   const digitArr = [];
   const charArr = [];
   let arr = string.split("").reverse();
   for (let i = 0; i < arr.length; i++) {
-    if ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9].includes(Number(arr[i]))) {
+    if (i < findIndex(string) - 1) {
       digitArr.push(arr[i]);
     } else {
       charArr.push(arr[i]);
@@ -43,7 +43,7 @@ function incrementString(string) {
   return charArr.reverse().join("") + strNumAddOne(digitArr.reverse().join(""));
 }
 
-//console.log(incrementString("fo99obar99")); //"fo99obar100"
+console.log(incrementString("fo99obar99")); //"fo99obar100"
 // console.log(incrementString("foobar123"));
 // console.log(incrementString("foobar"));
 // console.log("foobar999", "foobar1000");
