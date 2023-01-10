@@ -1,14 +1,17 @@
+const isFirstNumUnique = (arr) => {
+  return arr[0] !== arr[1] && arr[1] === arr[2];
+};
+
 function findUniq(arr) {
-  let uniqueNum = arr[0];
+  if (isFirstNumUnique(arr)) {
+    return arr[0];
+  }
+  const repeatedNum = arr[0];
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== uniqueNum) {
+    if (arr[i] !== repeatedNum) {
       return arr[i];
     }
-    // if (arr[i] !== arr[i + 1] && arr[i] !== arr[i - 1]) {
-    //   return arr[i];
-    // }
   }
-  return uniqueNum;
 }
 console.log(findUniq([1, 0, 0]), 1);
 console.log(findUniq([0, 1, 0]), 1);
