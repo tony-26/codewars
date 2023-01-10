@@ -1,10 +1,9 @@
 const toBinary = (n) => {
-  let binary = (n % 2).toString();
-  for (; n > 1; ) {
-    n = parseInt(n / 2);
+  let binary = "";
+  while (n > 0) {
     binary = (n % 2) + binary;
+    n = Math.floor(n / 2);
   }
-  return binary;
+  return Number(binary);
 };
 console.log(toBinary(3)); // 11
-//Convert to Binary
