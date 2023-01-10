@@ -1,7 +1,7 @@
 function towerBuilder(nFloors) {
   let tower = [];
   for (let i = 0; i < nFloors; i++) {
-    let symbol = "";
+    let symbol = "*";
   }
 }
 console.log(towerBuilder(1), ["*"]);
