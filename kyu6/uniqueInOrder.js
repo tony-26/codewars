@@ -1,4 +1,7 @@
 var uniqueInOrder = function (iterable) {
+  if (iterable.length === 0) {
+    return [];
+  }
   let result = [];
   let previous = iterable[0];
   result.push(previous);
