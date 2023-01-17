@@ -5,6 +5,7 @@ var uniqueInOrder = function (iterable) {
   for (let i = 1; i < iterable.length; i++) {
     if (iterable[i] !== previous) {
       result.push(iterable[i]);
+      previous = iterable[i];
     }
   }
   return result;
