@@ -1,20 +1,36 @@
 function duplicateEncode(word) {
-  let split = word.toLowerCase().split("");
-  let firstProcessed = [];
+  let characters = word.toLowerCase().characters("");
+  let process = [];
   let indexOfFirstDuplicate = [];
-  let result = "";
+  let result = [];
 
   for (let i = 0; i < word.length; i++) {
-    if (process.includes(split[i])) {
-      result += ")";
+    if (process.includes(characters[i])) {
+      result.push(")");
+      for (let j = 0; j < indexOfFirstDuplicate.length; j++) {
+        const firstOccurance = characters[indexOfFirstDuplicate[j]];
+
+        if (firstOccurance === characters[i]) {
+          result[indexOfFirstDuplicate[j]] = ")";
+        }
+      }
     } else {
-      result += "(";
+      result.push("(");
+      process.push(characters[i]);
+      indexOfFirstDuplicate.push(i);
     }
-    process.push(split[i]);
+    console.log({
+      element: characters[i],
+      i,
+      process,
+      indexOfFirstDuplicate,
+      result,
+    });
   }
-  return result;
+  //console.log(indexOfFirstDuplicate);
+  return result.join("");
 }
-console.log(duplicateEncode("din"), "(((");
+//console.log(duplicateEncode("din"), "(((");
 console.log(duplicateEncode("recede"), "()()()");
 // console.log(duplicateEncode("Success"), ")())())", "should ignore case");
 // console.log(duplicateEncode("(( @"), "))((");
