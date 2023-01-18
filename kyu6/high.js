@@ -1,4 +1,4 @@
-console.log("a".charCodeAt(0) - 96);
+//console.log("a".charCodeAt(0) - 96);
 function high(x) {
   let score = 0;
   let scoreArr = [];
@@ -7,9 +7,14 @@ function high(x) {
     let wordSplit = arr[i].split("");
     for (let j = 0; j < wordSplit.length; j++) {
       score = score + (wordSplit[j].charCodeAt(0) - 96);
+      console.log(wordSplit);
     }
     scoreArr.push(score);
+    //console.log(scoreArr);
   }
+  //console.log(arr);
+
+  //return scoreArr;
 }
 // console.log(high("man i need a taxi up to ubud"), "taxi");
 // console.log(high("what time are we climbing up the volcano"), "volcano");
