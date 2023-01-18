@@ -1,19 +1,25 @@
-//console.log("a".charCodeAt(0) - 96);
+console.log("b".charCodeAt(0) - 96);
 function high(x) {
   let score = 0;
   let scoreArr = [];
   let arr = x.split(" ");
+  console.log(arr);
   for (let i = 0; i < arr.length; i++) {
     let wordSplit = arr[i].split("");
     for (let j = 0; j < wordSplit.length; j++) {
       score = score + (wordSplit[j].charCodeAt(0) - 96);
-      console.log(wordSplit);
+      //console.log(score, wordSplit[j]);
+      //console.log(wordSplit);
     }
     scoreArr.push(score);
+    score = 0;
     //console.log(scoreArr);
   }
-  //console.log(arr);
-
+  console.log(scoreArr);
+  if (scoreArr.length === 2 && scoreArr[0] === scoreArr[1]) {
+    return arr[0];
+  } else {
+  }
   //return scoreArr;
 }
 // console.log(high("man i need a taxi up to ubud"), "taxi");
