@@ -11,5 +11,5 @@ function bouncingBall(h, bounce, window) {
     bounceTimes += 2;
     h = h * bounce;
   }
-  return bounceTimes;
+  return bounceTimes - 1;
 }
