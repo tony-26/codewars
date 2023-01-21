@@ -1,3 +1,19 @@
+const isSmileyWithNose = (str, validEyes, validNoses, validFaces) => {
+  return (
+    str.length === 3 &&
+    validEyes.includes(str[0]) &&
+    validNoses.includes(str[1]) &&
+    validFaces.includes(str[2])
+  );
+};
+const isSmileyWithoutNose = (str, validEyes, validFaces) => {
+  return (
+    str.length === 2 &&
+    validEyes.includes(str[0]) &&
+    validFaces.includes(str[1])
+  );
+};
+
 function countSmileys(arr) {
   const validEyes = [";", ":"];
   const validNoses = ["-", "~"];
@@ -5,19 +21,10 @@ function countSmileys(arr) {
 
   let count = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (
-      arr[i].length === 3 &&
-      validEyes.includes(arr[i][0]) &&
-      validNoses.includes(arr[i][1]) &&
-      validFaces.includes(arr[i][2])
-    ) {
+    if (isSmileyWithNose(arr[i], validEyes, validNoses, validFaces)) {
       count += 1;
     }
-    if (
-      arr[i].length === 2 &&
-      validEyes.includes(arr[i][0]) &&
-      validFaces.includes(arr[i][1])
-    ) {
+    if (isSmileyWithoutNose(arr[i], validEyes, validFaces)) {
       count += 1;
     }
   }
