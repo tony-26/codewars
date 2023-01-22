@@ -1,8 +1,12 @@
 function sumMix(x) {
   let sum = 0;
-  x.reduce((prevReturnedValue, currentNum) => {
-    sum = sum + Number(currentNum) + Number(prevReturnedValue);
-  }, 0);
+  //   x.reduce((prevReturnedValue, currentNum) => {
+  //     sum = sum + Number(currentNum) + Number(prevReturnedValue);
+  //   }, 0);
+  //   return sum;
+  for (let i = 0; i < x.length; i++) {
+    sum = sum + Number(x[i]);
+  }
   return sum;
 }
 console.log(sumMix([9, 3, "7", "3"]), 22);
