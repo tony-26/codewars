@@ -1,9 +1,10 @@
 function xor(a, b) {
-  if ((a && !b) || (!a && b)) {
-    return true;
-  } else {
-    return false;
-  }
+  //   if ((a && !b) || (!a && b)) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  return (a && !b) || (!a && b);
 }
 console.log(xor(false, false), false, "false xor false === false");
 console.log(xor(true, false), true, "true xor false === true");
