@@ -1,16 +1,16 @@
 function findDifference(a, b) {
-  let sum1 = 1;
-  let sum2 = 1;
-  const sumA = a.map((e) => {
-    sum1 = sum1 * e;
+  let productA = 1;
+  let productB = 1;
+  const A = a.map((e) => {
+    productA = productA * e;
   });
-  const sumB = b.map((e) => {
-    sum2 = sum2 * e;
+  const B = b.map((e) => {
+    productB = productB * e;
   });
-  if (sum1 > sum2) {
-    return sum1 - sum2;
+  if (productA > productB) {
+    return productA - productB;
   } else {
-    return sum2 - sum1;
+    return productB - productA;
   }
 }
 console.log(findDifference([3, 2, 5], [1, 4, 4]), 14);
