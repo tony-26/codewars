@@ -1,6 +1,11 @@
 function stockList(listOfArt, listOfCat) {
   let finalData = "";
-  for (let i = 0; i < listOfArt.length; i++) {}
+  for (let i = 0; i < listOfArt.length; i++) {
+    for (let j = 0; j < listOfCat.length; j++) {
+      if (listOfArt[i][0] === listOfCat[j]) {
+      }
+    }
+  }
 }
 let b, c, res;
 b = ["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"];
