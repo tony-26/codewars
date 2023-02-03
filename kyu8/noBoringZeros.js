@@ -4,7 +4,7 @@ function noBoringZeros(n) {
     return 0;
   }
   if (str[str.length - 1] !== "0") {
-    return str;
+    return Number(str);
   } else {
     const arr = str.split("");
     arr.pop();
