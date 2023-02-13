@@ -1,38 +1,80 @@
-const snail = (array) => {
+const outerSnail = (array) => {
+  if (array.length === 1) {
+    return [...array[0]];
+  }
   let result = [];
   result = result.concat(array[0]);
   for (let i = 1; i < array.length - 1; i++) {
     result.push([...array[i]].reverse()[0]);
   }
   result = result.concat([...array[array.length - 1]].reverse());
-
-  //   result.push(array[array.length - 1].reverse());
   for (let i = array.length - 2; i > 0; i--) {
-    //console.log(array[i]);
     result.push(array[i][0]);
   }
-  //console.log(array);
+
   return result;
 };
-// const arr1 = ["Cecilie", "Lone"];
-// const arr2 = ["Emil", "Tobias", "Linus"];
-// const children = arr1.concat(arr2);
-// console.log(arr1.shift());
+//console.log(outerSnail([[5]]));
+const removeOuterRing = (array) => {
+  array.pop();
+  array.shift();
+  for (let i = 0; i < array.length; i++) {
+    array[i].shift();
+    array[i].pop();
+  }
+  return array;
+};
+//console.log(removeOuterRing([[5]]));
+const snail = (array, result = []) => {
+  if (array.length === 0) return result;
+  const outerResult = outerSnail(array);
+  result = result.concat(outerResult);
+  removeOuterRing(array);
+  return snail(array, result);
+};
+
+const rotate = (array, result = []) => {
+  result = result.concat(array[0]).pop();
+  for (let i = 0; i < array.length; i++) {
+    result.push(array[i][array.length - 1]);
+  }
+  result = result.concat(array[array.length - 1]).shift();
+  for (let i = array.length - 1; i > 0; i--) {
+    result.push(array[i][0]);
+  }
+};
 console.log(
-  snail([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-  ])
-);
-console.log(
-  snail([
+  rotate([
     [1, 2, 3, 4],
-    [4, 5, 6, 8],
-    [7, 8, 9, 10],
-    [11, 12, 13, 14],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16],
   ])
 );
+
+// console.log(
+//   snail([
+//     [1, 2, 3, 10],
+//     [4, 5, 6, 11],
+//     [7, 8, 9, 12],
+//     [13, 14, 15, 16],
+//   ])
+// );
+// console.log(
+//   snail([
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9],
+//   ])
+// );
+// console.log(
+//   snail([
+//     [1, 2, 3, 4],
+//     [4, 5, 6, 8],
+//     [7, 8, 9, 10],
+//     [11, 12, 13, 14],
+//   ])
+// );
 
 //[1, 2, 3, 6, 9, 8, 7, 4, 5]
 // console.log(
