@@ -33,23 +33,60 @@ const snail = (array, result = []) => {
   return snail(array, result);
 };
 
-const rotate = (array, result = []) => {
-  result = result.concat(array[0]).pop();
-  for (let i = 0; i < array.length; i++) {
-    result.push(array[i][array.length - 1]);
+// const rotate = (array, result = []) => {
+//   result = result.concat(array[0]);
+//   result.pop();
+
+//   for (let i = 0; i < array.length; i++) {
+//     result.push([...array[i]][array.length - 1]);
+//   }
+//   result = result.concat(array[array.length - 1]);
+//   result.shift();
+//   for (let i = array.length - 1; i > 0; i--) {
+//     console.log(result);
+//     result.push([...array[i]][0]);
+//   }
+//   return result;
+// };
+const rotateAntiClockwise = (array) => {
+  let result = [];
+  for (let i = 0; i < array[0].length; i++) {
+    result.push([]);
   }
-  result = result.concat(array[array.length - 1]).shift();
-  for (let i = array.length - 1; i > 0; i--) {
-    result.push(array[i][0]);
+  for (let j = 0; j < result.length; j++) {
+    for (let i = 0; i < array.length; i++) {
+      result[j].push(array[i].pop());
+    }
   }
+
+  return result;
 };
+// console.log(
+//   rotateAntiClockwise([
+//     [1, 2, 3],
+//     [4, 5, 6],
+//   ])
+// ); // [[3, 6], [2, 5], [1, 4]]
+// // [[3, 6], [2, 5], []]
+// console.log(
+//   rotateAntiClockwise([
+//     [1, 2, 3, 4],
+//     [4, 5, 6, 7],
+//   ])
+// ); // [[4, 7], [3, 6], [2, 5], [1, 4]]
+// [[4, 7], [3, 6], [], []]
 console.log(
-  rotate([
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12],
-    [13, 14, 15, 16],
-  ])
+  rotateAntiClockwise(
+    rotateAntiClockwise(
+      rotateAntiClockwise(
+        rotateAntiClockwise([
+          [1, 2, 3, 4, 5],
+          [4, 5, 6, 7, 8],
+          [10, 11, 12, 13, 14],
+        ])
+      )
+    )
+  )
 );
 
 // console.log(
