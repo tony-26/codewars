@@ -44,7 +44,26 @@ const minutesToHours = (minutes) => {
     }
   }
 };
-console.log(minutesToHours(70));
+const hoursToDays = (hours) => {
+  let days = Math.floor(hours / 24);
+  let remainingHours = hours % 24;
+
+  if (days === 1) {
+    if (remainingHours === 1) {
+      return days + " day " + remainingHours + " hour";
+    } else {
+      return days + " day " + remainingHours + " hours";
+    }
+  } else {
+    if (remainingHours === 1) {
+      return days + " days " + remainingHours + " hour";
+    } else {
+      return days + " days " + remainingHours + " hours";
+    }
+  }
+};
+console.log(hoursToDays(90));
+//console.log(minutesToHours(70));
 // console.log(secondsToMinutes(70)); // "1 minute 10 seconds"
 // console.log(secondsToMinutes(120)); // "2 minutes 0 seconds"
 // console.log(secondsToMinutes(3661)); // "61 minutes 1 second"
