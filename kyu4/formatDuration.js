@@ -62,7 +62,25 @@ const hoursToDays = (hours) => {
     }
   }
 };
-console.log(hoursToDays(90));
+const daysToYears = (days) => {
+  let years = Math.floor(days / 365);
+  let remainingDays = days % 365;
+  if (years === 1) {
+    if (remainingDays === 1) {
+      return years + " year " + remainingDays + " day";
+    } else {
+      return years + " year " + remainingDays + " days";
+    }
+  } else {
+    if (remainingDays === 1) {
+      return years + " years " + remainingDays + " day";
+    } else {
+      return years + " years " + remainingDays + " days";
+    }
+  }
+};
+console.log(daysToYears(700));
+//console.log(hoursToDays(90));
 //console.log(minutesToHours(70));
 // console.log(secondsToMinutes(70)); // "1 minute 10 seconds"
 // console.log(secondsToMinutes(120)); // "2 minutes 0 seconds"
