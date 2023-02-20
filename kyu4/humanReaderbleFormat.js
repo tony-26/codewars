@@ -21,6 +21,36 @@ const formatTime = (time) => {
   }
 };
 //console.log(formatTime({ minutes: 1, seconds: 30 }, "1 minute and 30 seconds"));
+const allFormatTime = (time) => {
+  let outputStr = "";
+  if (years === 1) {
+    output += " year";
+  } else {
+    output += " years";
+  }
+  output += ", ";
+
+  if (days === 1) {
+    output += " day";
+  } else {
+    output += " days";
+  }
+  output += ", ";
+
+  if (hours === 1) {
+    output += " hour";
+  } else {
+    output += " hours";
+  }
+  output += ", ";
+
+  if (seconds === 1) {
+    output += " second";
+  } else {
+    output += " seconds";
+  }
+};
+console.log(allFormatTime({ years: 1, days: 12, hours: 23, seconds: 1 })); //"1 year, 12 days, 23 hours and 1 second."
 
 // console.log(unformatted(90), { minutes: 1, seconds: 30 });
 // console.log(unformatted(31), { minutes: 0, seconds: 31 });
