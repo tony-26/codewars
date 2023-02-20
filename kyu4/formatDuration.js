@@ -2,26 +2,31 @@ function formatDuration(seconds) {
   if (seconds === 0) {
     return "now";
   }
-  const minute = 60;
-  const hour = 60 * minute;
-  const day = 24 * hour;
-  const year = 365 * day;
+  return secondsToMinutes(seconds);
 }
 
 const secondsToMinutes = (seconds) => {
   let minutes = Math.floor(seconds / 60);
   let remainingSeconds = seconds % 60;
+  if (seconds === 1) {
+    return seconds + " second";
+  } else if (seconds < 60) {
+    return seconds + " seconds";
+  }
   if (minutes === 1) {
     if (remainingSeconds === 1) {
-      return minutes + " minute " + remainingSeconds + " second";
-    } else {
-      return minutes + " minute " + remainingSeconds + " seconds";
+      return minutes + " minute " + "and " + remainingSeconds + " second";
+    } 
+    
+    
+    else {
+      return minutes + " minute " + "and " + remainingSeconds + " seconds";
     }
   } else {
     if (remainingSeconds === 1) {
-      return minutes + " minutes " + remainingSeconds + " second";
+      return minutes + " minutes " + "and " + remainingSeconds + " second";
     } else {
-      return minutes + " minutes " + remainingSeconds + " seconds";
+      return minutes + " minutes " + "and " + remainingSeconds + " seconds";
     }
   }
 };
@@ -79,10 +84,14 @@ const daysToYears = (days) => {
     }
   }
 };
-console.log(daysToYears(700));
+//console.log(daysToYears(700));
 //console.log(hoursToDays(90));
 //console.log(minutesToHours(70));
-// console.log(secondsToMinutes(70)); // "1 minute 10 seconds"
+console.log(formatDuration(1)); //
+console.log(formatDuration(51));
+console.log(formatDuration(60));
+console.log(formatDuration(70)); // "1 minute and 10 seconds"
+console.log(formatDuration(120));
 // console.log(secondsToMinutes(120)); // "2 minutes 0 seconds"
 // console.log(secondsToMinutes(3661)); // "61 minutes 1 second"
 // console.log(formatDuration(1), "1 second");
