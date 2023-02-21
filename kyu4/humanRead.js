@@ -1,42 +1,26 @@
 const getUnformattedTime = (seconds) => {
-  if (seconds >= 60) {
-    let minutes = Math.floor(seconds / 60);
-    let remainingSeconds = seconds % 60;
+  let remainingTime = seconds;
 
-    if (minutes >= 60) {
-      let hours = Math.floor(minutes / 60);
-      let remainingMinutes = minutes % 60;
-      if (hours >= 24) {
-        let days = Math.floor(hours / 24);
-        let remainingHours = hours % 24;
+  const seconds = remainingTime / 1;
+  const remainingSeconds = seconds % 60;
+  remainingTime = remainingTime - remainingSeconds;
 
-        if (days >= 30) {
-          let months = Math.floor(days / 30);
-          let remainingDays = days % 30;
-          return {
-            months: months,
-            days: remainingDays,
-            hours: remainingHours,
-            minutes: remainingMinutes,
-            seconds: remainingSeconds,
-          };
-        }
-        return {
-          days: days,
-          hours: remainingHours,
-          minutes: remainingMinutes,
-          seconds: remainingSeconds,
-        };
-      }
-      return {
-        hours: hours,
-        minutes: remainingMinutes,
-        seconds: remainingSeconds,
-      };
-    }
-    return { minutes: minutes, seconds: remainingSeconds };
-  }
-  return { seconds: seconds };
+  const minutes = remainingTime / 60;
+  const remainingMinutes = minutes % 60;
+  remainingTime = minutes - remainingMinutes;
+
+  const hours = remainingTime / 60;
+  const remainingHours = hours % 24;
+  remainingTime = hours - remainingHours;
+
+  const days = remainingTime / 24;
+
+  return {
+    days: days,
+    hours: remainingHours,
+    minutes: remainingMinutes,
+    seconds: remainingSeconds,
+  };
 };
 console.log(getUnformattedTime(3), { seconds: 3 });
 console.log(getUnformattedTime(62), { minutes: 1, seconds: 2 });
@@ -49,10 +33,10 @@ console.log(getUnformattedTime(267065), {
   minutes: 11,
   seconds: 5,
 });
-console.log(getUnformattedTime(18411065), {
-  months: 7,
-  days: 3,
-  hours: 2,
-  minutes: 11,
-  seconds: 5,
-});
+// console.log(getUnformattedTime(18411065), {
+//   months: 7,
+//   days: 3,
+//   hours: 2,
+//   minutes: 11,
+//   seconds: 5,
+// });
