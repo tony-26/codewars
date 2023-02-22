@@ -1,5 +1,5 @@
-const getUnformattedTime = (seconds) => {
-  let remainingTime = seconds;
+const getUnformattedTime = (time) => {
+  let remainingTime = time;
 
   const seconds = remainingTime / 1;
   const remainingSeconds = seconds % 60;
@@ -14,14 +14,24 @@ const getUnformattedTime = (seconds) => {
   remainingTime = hours - remainingHours;
 
   const days = remainingTime / 24;
+  const remainingDays = days % 30;
+  remainingTime = days - remainingDays;
+
+  const months = remainingTime / 30;
 
   return {
-    days: days,
+    months: months,
+    days: remainingDays,
     hours: remainingHours,
     minutes: remainingMinutes,
     seconds: remainingSeconds,
   };
 };
+const linkFormattedTime = (time) => {
+  
+};
+console.log(linkFormattedTime({ seconds: 3 }), "3 seconds");
+
 console.log(getUnformattedTime(3), { seconds: 3 });
 console.log(getUnformattedTime(62), { minutes: 1, seconds: 2 });
 console.log(getUnformattedTime(3661), { hours: 1, minutes: 1, seconds: 1 });
@@ -33,10 +43,10 @@ console.log(getUnformattedTime(267065), {
   minutes: 11,
   seconds: 5,
 });
-// console.log(getUnformattedTime(18411065), {
-//   months: 7,
-//   days: 3,
-//   hours: 2,
-//   minutes: 11,
-//   seconds: 5,
-// });
+console.log(getUnformattedTime(18411065), {
+  months: 7,
+  days: 3,
+  hours: 2,
+  minutes: 11,
+  seconds: 5,
+});
