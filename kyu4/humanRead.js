@@ -28,25 +28,31 @@ const getUnformattedTime = (time) => {
   };
 };
 const linkFormattedTime = (time) => {
-  
+  let output = "";
+  if (time.seconds === 1) {
+    return "1 second";
+  } else if (time.seconds > 1) {
+    output = output + time.seconds + " seconds";
+    return output;
+  }
 };
 console.log(linkFormattedTime({ seconds: 3 }), "3 seconds");
-
-console.log(getUnformattedTime(3), { seconds: 3 });
-console.log(getUnformattedTime(62), { minutes: 1, seconds: 2 });
-console.log(getUnformattedTime(3661), { hours: 1, minutes: 1, seconds: 1 });
-console.log(getUnformattedTime(3609), { hours: 1, minutes: 0, sseconds: 9 });
-console.log(getUnformattedTime(14470), { hours: 4, minutes: 1, seconds: 10 });
-console.log(getUnformattedTime(267065), {
-  days: 3,
-  hours: 2,
-  minutes: 11,
-  seconds: 5,
-});
-console.log(getUnformattedTime(18411065), {
-  months: 7,
-  days: 3,
-  hours: 2,
-  minutes: 11,
-  seconds: 5,
-});
+console.log(linkFormattedTime({ seconds: 1 }), "1 second");
+// console.log(getUnformattedTime(3), { seconds: 3 });
+// console.log(getUnformattedTime(62), { minutes: 1, seconds: 2 });
+// console.log(getUnformattedTime(3661), { hours: 1, minutes: 1, seconds: 1 });
+// console.log(getUnformattedTime(3609), { hours: 1, minutes: 0, sseconds: 9 });
+// console.log(getUnformattedTime(14470), { hours: 4, minutes: 1, seconds: 10 });
+// console.log(getUnformattedTime(267065), {
+//   days: 3,
+//   hours: 2,
+//   minutes: 11,
+//   seconds: 5,
+// });
+// console.log(getUnformattedTime(18411065), {
+//   months: 7,
+//   days: 3,
+//   hours: 2,
+//   minutes: 11,
+//   seconds: 5,
+// });
