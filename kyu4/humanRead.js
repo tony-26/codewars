@@ -28,16 +28,28 @@ const getUnformattedTime = (time) => {
   };
 };
 const linkFormattedTime = (time) => {
-  let output = "";
+  let secondsOutput = "";
   if (time.seconds === 1) {
-    return "1 second";
+    secondsOutput = "1 second";
   } else if (time.seconds > 1) {
-    output = output + time.seconds + " seconds";
-    return output;
+    secondsOutput = secondsOutput + time.seconds + " seconds";
+
   }
+
+  let minutesOutput = "";
+  if (time.minutes === 1) {
+    minutesOutput = "1 minute";
+  } else if (time.minutes > 1) {
+    minutesOutput = time.minutes + " minutes";
+  }
+
 };
 console.log(linkFormattedTime({ seconds: 3 }), "3 seconds");
 console.log(linkFormattedTime({ seconds: 1 }), "1 second");
+console.log(
+  linkFormattedTime({ minutes: 1, seconds: 2 }),
+  "1 minute and 2 seconds"
+);
 // console.log(getUnformattedTime(3), { seconds: 3 });
 // console.log(getUnformattedTime(62), { minutes: 1, seconds: 2 });
 // console.log(getUnformattedTime(3661), { hours: 1, minutes: 1, seconds: 1 });
