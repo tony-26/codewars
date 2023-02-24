@@ -65,7 +65,26 @@ const linkFormattedTime = (time) => {
     daysOutput = time.days + " days";
   }
 
+  let monthsOutput = "";
+  if (time.months === 0) {
+    return (
+      daysOutput +
+      " " +
+      hoursOutput +
+      " " +
+      minutesOutput +
+      " and " +
+      secondsOutput
+    );
+  }
+  if (time.months === 1) {
+    monthsOutput = time.months + " month";
+  } else if (time.months > 1) {
+    monthsOutput = time.months + " months";
+  }
   return (
+    monthsOutput +
+    " " +
     daysOutput +
     " " +
     hoursOutput +
@@ -75,13 +94,13 @@ const linkFormattedTime = (time) => {
     secondsOutput
   );
 };
-console.log(linkFormattedTime({ seconds: 3 }), "3 seconds");
-console.log(linkFormattedTime({ seconds: 1 }), "1 second");
-console.log(
-  linkFormattedTime({ minutes: 1, seconds: 2 }),
-  "1 minute and 2 seconds"
-);
-console.log(linkFormattedTime({ hours: 2, minutes: 10, seconds: 35 })); //"2 hours, 10 minutes and 35 seconds"
+// console.log(linkFormattedTime({ seconds: 3 }), "3 seconds");
+// console.log(linkFormattedTime({ seconds: 1 }), "1 second");
+// console.log(
+//   linkFormattedTime({ minutes: 1, seconds: 2 }),
+//   "1 minute and 2 seconds"
+// );
+// console.log(linkFormattedTime({ hours: 2, minutes: 10, seconds: 35 })); //"2 hours, 10 minutes and 35 seconds"
 // console.log(getUnformattedTime(3), { seconds: 3 });
 // console.log(getUnformattedTime(62), { minutes: 1, seconds: 2 });
 // console.log(getUnformattedTime(3661), { hours: 1, minutes: 1, seconds: 1 });
