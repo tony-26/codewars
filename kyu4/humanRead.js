@@ -27,23 +27,18 @@ const getUnformattedTime = (time) => {
     seconds: remainingSeconds,
   };
 };
-const hoursStr = (hour) => {
-  if (hour === 0) return "";
-  if (hour === 1) return "1 hour";
-  return hour.toString() + " hours";
-};
-console.log(hoursStr(0));
-console.log(hoursStr(1));
-console.log(hoursStr(5));
 
-const minutesStr = (minute) => {
-  if (minute === 0) return "";
-  if (minute === 1) return "1 minute";
-  return minute.toString() + " minutes";
+const timeStr = (timeNum, timeUnit) => {
+  if (timeNum === 0) return "";
+  if (timeNum === 1) return "1 " + timeUnit;
+  return timeNum.toString() + " " + timeUnit;
 };
-console.log(minutesStr(0));
-console.log(minutesStr(1));
-console.log(minutesStr(5));
+console.log(timeStr(1, "hour")); //"1 hour"
+console.log(timeStr(1, "minute")); //"1 minute"
+console.log(timeStr(3, "day")); //"3 days"
+console.log(timeStr(0, "month")); //""
+
+
 const linkFormattedTime = (time) => {
   let secondsOutput = "";
   if (time.seconds === 1) {
