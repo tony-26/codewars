@@ -28,14 +28,9 @@ const getUnformattedTime = (time) => {
   };
 };
 const hoursStr = (hour) => {
-  if (hour === 0) {
-    return "";
-  }
-  if (hour === 1) {
-    return "1 hour";
-  } else if (hour > 1) {
-    return hour.toString() + " hours";
-  }
+  if (hour === 0) return "";
+  if (hour === 1) return "1 hour";
+  return hour.toString() + " hours";
 };
 console.log(hoursStr(0));
 console.log(hoursStr(1));
