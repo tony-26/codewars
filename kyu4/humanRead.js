@@ -35,6 +35,15 @@ const hoursStr = (hour) => {
 console.log(hoursStr(0));
 console.log(hoursStr(1));
 console.log(hoursStr(5));
+
+const minutesStr = (minute) => {
+  if (minute === 0) return "";
+  if (minute === 1) return "1 minute";
+  return minute.toString() + " minutes";
+};
+console.log(minutesStr(0));
+console.log(minutesStr(1));
+console.log(minutesStr(5));
 const linkFormattedTime = (time) => {
   let secondsOutput = "";
   if (time.seconds === 1) {
