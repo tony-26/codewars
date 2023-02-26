@@ -20,82 +20,13 @@ const getUnformattedTime = (time) => {
   const months = remainingTime / 30;
 
   return {
-    months: months,
-    days: remainingDays,
-    hours: remainingHours,
-    minutes: remainingMinutes,
-    seconds: remainingSeconds,
+    month: months,
+    day: remainingDays,
+    hour: remainingHours,
+    minute: remainingMinutes,
+    second: remainingSeconds,
   };
 };
-
-const timeStr = (timeNum, timeUnit) => {
-  if (timeNum === 0) return "";
-  if (timeNum === 1) return "1 " + timeUnit;
-  return timeNum.toString() + " " + timeUnit;
-};
-console.log(timeStr(1, "hour")); //"1 hour"
-console.log(timeStr(1, "minute")); //"1 minute"
-console.log(timeStr(3, "day")); //"3 days"
-console.log(timeStr(0, "month")); //""
-
-
-const linkFormattedTime = (time) => {
-  let secondsOutput = "";
-  if (time.seconds === 1) {
-    secondsOutput = "1 second";
-  } else if (time.seconds > 1) {
-    secondsOutput = secondsOutput + time.seconds + " seconds";
-  }
-
-  let minutesOutput = "";
-
-  if (time.minutes === 1) {
-    minutesOutput = "1 minute";
-  } else if (time.minutes > 1) {
-    minutesOutput = time.minutes + " minutes";
-  }
-
-  let hoursOutput = "";
-
-  if (time.hours === 1) {
-    hoursOutput = time.hours + " hour";
-  } else if (time.hours > 1) {
-    hoursOutput = time.hours + " hours";
-  }
-
-  let daysOutput = "";
-  if (time.days === 1) {
-    daysOutput = time.days + " day";
-  } else if (time.days > 1) {
-    daysOutput = time.days + " days";
-  }
-
-  let monthsOutput = "";
-  if (time.months === 1) {
-    monthsOutput = time.months + " month";
-  } else if (time.months > 1) {
-    monthsOutput = time.months + " months";
-  }
-  return (
-    monthsOutput +
-    " " +
-    daysOutput +
-    " " +
-    hoursOutput +
-    " " +
-    minutesOutput +
-    " and " +
-    secondsOutput
-  );
-};
-//console.log(linkFormattedTime({ months: 12, days: 20, hours: 0, seconds: 10 }));
-// console.log(linkFormattedTime({ seconds: 3 }), "3 seconds");
-// console.log(linkFormattedTime({ seconds: 1 }), "1 second");
-// console.log(
-//   linkFormattedTime({ minutes: 1, seconds: 2 }),
-//   "1 minute and 2 seconds"
-// );
-// console.log(linkFormattedTime({ hours: 2, minutes: 10, seconds: 35 })); //"2 hours, 10 minutes and 35 seconds"
 // console.log(getUnformattedTime(3), { seconds: 3 });
 // console.log(getUnformattedTime(62), { minutes: 1, seconds: 2 });
 // console.log(getUnformattedTime(3661), { hours: 1, minutes: 1, seconds: 1 });
@@ -114,3 +45,40 @@ const linkFormattedTime = (time) => {
 //   minutes: 11,
 //   seconds: 5,
 // });
+
+const timeStr = (timeNum, timeUnit) => {
+  if (timeNum === 0) return "";
+  if (timeNum === 1) return "1 " + timeUnit;
+  return timeNum.toString() + " " + timeUnit + "s";
+};
+console.log(timeStr(1, "hour")); //"1 hour"
+console.log(timeStr(1, "minute")); //"1 minute"
+console.log(timeStr(3, "day")); //"3 days"
+console.log(timeStr(0, "month")); //""
+console.log(timeStr(5, "second")); //"5 seconds"
+
+const linkFormattedTime = (time) => {
+  const result = [];
+  Object.entries(time).forEach((e) => {
+    const [timeUnit, timeNum] = e;
+    const timeString = timeStr(timeNum, timeUnit);
+    if (timeString.length > 0) {
+      result.push(timeString);
+    }
+  });
+  if (result.length === 1) return result[0];
+  const lastTimeString = result.pop();
+  return result.join(", ") + " and " + lastTimeString;
+};
+console.log(
+  linkFormattedTime({ month: 0, day: 0, hour: 0, minute: 0, second: 10 })
+); //"10 seconds"
+console.log(
+  linkFormattedTime({ month: 10, day: 0, hour: 0, minute: 0, second: 11 })
+); //"10 months and 11 seconds"
+console.log(
+  linkFormattedTime({ month: 12, day: 20, hour: 0, minute: 0, second: 10 })
+); //"12 months, 20 days and 10 seconds"
+console.log(
+  linkFormattedTime({ month: 1, day: 20, hour: 59, minute: 11, second: 10 })
+); //"1 month, 20 days, 59 hours, 11 minutes and 10 seconds"
