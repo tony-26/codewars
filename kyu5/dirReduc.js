@@ -1,40 +1,31 @@
-function dirReduc(arr) {
-  let x = 0;
-  let y = 0;
-  let result = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "NORTH") {
-      y += 1;
-    } else if (arr[i] === "SOUTH") {
-      y -= 1;
-    } else if (arr[i] === "EAST") {
-      x += 1;
-    } else if (arr[i] === "WEST") {
-      x -= 1;
-    }
+const dirReducStr = (str) => {
+  const result = str
+    .replace("EW", "")
+    .replace("NS", "")
+    .replace("SN", "")
+    .replace("WE", "");
+  if (result === str) {
+    return result;
+  } else {
+    return dirReducStr(result);
   }
-  if (x === 1) {
-    result.push("EAST");
-  }
-  if (x === -1) {
-    result.push("WEST");
-  }
-  if (y === 1) {
-    result.push("NORTH");
-  }
-  if (y === -1) {
-    result.push("SOUTH");
-  }
-  return result;
-}
+};
+console.log(dirReducStr("NSSEWNW"));
+console.log(dirReducStr("ENSW"));
+const arrDirToStr = (arr) => arr.map((e) => e[0]).join("");
+console.log(arrDirToStr(["NORTH", "SOUTH", "EAST"])); //"NSE"
+const strToArrDir = (str) => {
+  const mappings = { W: "WEST", E: "EAST", S: "SOUTH", N: "NORTH" };
+  return str.split("").map((e) => mappings[e]);
+};
+console.log(strToArrDir("WESN")); //["WEST","EAST","SOUTH", "NORTH"]
+const dirReduc = (arr) => {
+  return strToArrDir(dirReducStr(arrDirToStr(arr)));
+};
 console.log(
   dirReduc(
-    ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
-    ["WEST"]
+    ["NORTH", "WEST", "SOUTH", "EAST"],
+    ["NORTH", "WEST", "SOUTH", "EAST"]
   )
 );
-// console.log(
-//   ["NORTH", "WEST", "SOUTH", "EAST"],
-//   ["NORTH", "WEST", "SOUTH", "EAST"]
-// );
 // console.log(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"], []);
