@@ -1,19 +1,27 @@
 function humanReadable(seconds) {
   if (seconds > 359999) return "";
   let remainingTime = seconds;
-  const remainingSeconds = seconds % 60;
+  let remainingSeconds = seconds % 60;
   remainingTime = remainingTime - remainingSeconds;
+  if (remainingSeconds.toString().length === 1) {
+    remainingSeconds = "0" + remainingSeconds;
+  }
 
   const minutes = remainingTime / 60;
-  const remainingMinutes = minutes % 60;
+  let remainingMinutes = minutes % 60;
   remainingTime = minutes - remainingMinutes;
+  if (remainingMinutes.toString().length === 1) {
+    remainingMinutes = "0" + remainingMinutes;
+  }
 
-  const hours = remainingTime / 60;
+  let hours = remainingTime / 60;
+  if (hours.toString().length === 1) {
+    hours = "0" + hours;
+  }
   return hours + ":" + remainingMinutes + ":" + remainingSeconds;
 }
 console.log(humanReadable(0), "00:00:00", "humanReadable(0)");
 console.log(humanReadable(59), "00:00:59", "humanReadable(59)");
-console.log(humanReadable(60), "00:01:00", "humanReadable(60)");
 console.log(humanReadable(90), "00:01:30", "humanReadable(90)");
 console.log(humanReadable(3599), "00:59:59", "humanReadable(3599)");
 console.log(humanReadable(3600), "01:00:00", "humanReadable(3600)");

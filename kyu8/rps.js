@@ -1,4 +1,6 @@
 const rps = (p1, p2) => {
+
+  const rules = {}
   if (p1 === p2) {
     return "Draw!";
   } else if (
