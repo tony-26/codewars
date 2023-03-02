@@ -1,5 +1,5 @@
 function distinct(a) {
-  if (a.length === 0) {
+  if (a.length === 1) {
     return a;
   }
   for (let i = 0; i < a.length; i++) {
@@ -9,6 +9,7 @@ function distinct(a) {
   }
   return a;
 }
-console.log(distinct([1]), [1]);
-console.log(distinct([1, 2]), [1, 2]);
-console.log(distinct([1, 1, 2]), [1, 2]);
+console.log(distinct([1, 1, 2, 3, 4, 5]));
+// console.log(distinct([1]), [1]);
+// console.log(distinct([1, 2]), [1, 2]);
+// console.log(distinct([1, 1, 2]), [1, 2]);
