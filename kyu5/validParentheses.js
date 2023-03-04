@@ -1,13 +1,10 @@
 function validParentheses(parens) {
-  if (parens.length === 0) {
-    return true;
-  } else {
-    if (parens === parens.replace("()", "")) {
-      return false;
-    } else {
-      return validParentheses(parens.replace("()", ""));
-    }
-  }
+  //termination condition 1
+  if (parens.length === 0) return true;
+  //termination condition 2
+  if (parens === parens.replace("()", "")) return false;
+  //recurrsive step
+  return validParentheses(parens.replace("()", ""));
 }
 // console.log(validParentheses("("), false);
 // console.log(validParentheses(")"), false);
