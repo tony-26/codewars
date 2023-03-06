@@ -9,7 +9,7 @@ function distinct(a) {
   }
   return a;
 }
-console.log(distinct([1, 1, 2, 3, 4, 5]));
+console.log(distinct([1, 1, 1, 2, 3, 4, 5]));
 // console.log(distinct([1]), [1]);
 // console.log(distinct([1, 2]), [1, 2]);
 // console.log(distinct([1, 1, 2]), [1, 2]);
