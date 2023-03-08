@@ -1,10 +1,11 @@
 "use strict";
 
 function flattenAndSort(array) {
+  let wholeArr = [];
   for (let i = 0; i < array.length; i++) {
-    array.concat(array[i]);
+    wholeArr.push(array[i]);
   }
-  return array;
+  return wholeArr;
 }
 // console.log(flattenAndSort([]), []);
 // console.log(flattenAndSort([[], []]), []);
@@ -17,7 +18,4 @@ function flattenAndSort(array) {
 //   ]),
 //   [1, 2, 3, 4, 5, 6, 7, 8, 9]
 // );
-console.log(
-  flattenAndSort([[1, 3, 5], [100], [2, 4, 6]]),
-  [1, 2, 3, 4, 5, 6, 100]
-);
+console.log(flattenAndSort([[1, 3, 5], [100], [2, 4, 6]])); //[1, 2, 3, 4, 5, 6, 100]
