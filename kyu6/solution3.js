@@ -6,9 +6,7 @@ function solution(str) {
   let result = [];
   let pairedStr = "";
   if (str.length % 2 === 0) {
-    //console.log("hi");
     for (let i = 0; i < str.length; i += 2) {
-      //console.log(i);
       pairedStr = str[i] + str[i + 1];
       result.push(pairedStr);
     }
