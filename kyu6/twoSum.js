@@ -1,4 +1,5 @@
 function twoSum(numbers, target) {
+  if (numbers.length === 0 || numbers === undefined) return [];
   let result = [];
 
   for (let j = 0; j < numbers.length; j++) {
