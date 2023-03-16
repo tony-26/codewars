@@ -5,7 +5,13 @@ function queueTime(customers, n) {
   if (n === 1) {
     return customers.reduce((a, b) => a + b, 0);
   }
-  
+  let time = 0;
+  for (let i = 0; i < customers.length; i++) {
+    while (customers[i] !== 0) {
+      customers[i] - 1;
+      time += 1;
+    }
+  }
 }
 console.log(queueTime([], 1), 0);
 console.log(queueTime([1, 2, 3, 4], 1), 10);
