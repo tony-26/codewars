@@ -3,8 +3,10 @@ function titleCase(title, minorWords) {
     return "";
   }
   let splitWord = title.split(" ");
+  console.log(splitWord);
   for (let i = 0; i < splitWord.length; i++) {
-    splitWord[i][0] = splitWord[i][0].toUpperCase();
+    console.log(splitWord[i][0]);
+    splitWord[i].charAt(0).toUpperCase() + splitWord[i].slice(1);
   }
   return splitWord.join(" ");
 }
