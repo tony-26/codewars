@@ -1,16 +1,16 @@
 function titleCase(title, minorWords) {
-  if (title.length === 0) {
-    return "";
-  }
+  // if (title.length === 0) {
+  //   return "";
+  // }
   let splitWord = title.split(" ");
   console.log(splitWord);
   for (let i = 0; i < splitWord.length; i++) {
-    console.log(splitWord[i][0]);
-    splitWord[i].charAt(0).toUpperCase() + splitWord[i].slice(1);
+    console.log(i);
+    splitWord[i][0] = splitWord[i][0].toUpperCase();
   }
-  return splitWord.join(" ");
+  return splitWord;
 }
-console.log(titleCase(""), "");
+// console.log(titleCase(""), "");
 console.log(titleCase("a clash of KINGS", "a an the of")); //"A Clash of Kings"
 // console.log(
 //   titleCase("THE WIND IN THE WILLOWS", "The In"),
