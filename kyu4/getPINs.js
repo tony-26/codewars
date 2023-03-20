@@ -17,14 +17,12 @@ const getSingleDigit = (str) => {
 // console.log(getSingleDigit("9")); //[6, 8, 9]
 
 const getPINs = (str) => {
-  // const currentResult = ["56", "58", "59"];
   console.log("method called");
   if (str.length === 1) {
     return getSingleDigit(str);
   }
   const lastDigit = str[str.length - 1];
   const newStr = str.substring(0, str.length - 1);
-  //return [lastDigit, newStr];
   const digitPossibility = getSingleDigit(lastDigit);
   const currentResult = getPINs(newStr);
   const result = [];
