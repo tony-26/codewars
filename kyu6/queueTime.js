@@ -20,3 +20,7 @@ console.log(queueTime([1, 2, 3, 4, 5], 100), 5);
 console.log(queueTime([5, 3, 4], 1), 12);
 console.log(queueTime([10, 2, 3, 3], 2), 10);
 console.log(queueTime([2, 3, 10, 2], 2), 12);
+console.log(queueTime([1, 2, 3, 3, 4, 5, 1, 1, 3, 4, 1], 3));
+q1:1, 3, 1, 1, 3
+q2:2, 4, 4
+q3:3, 5, 1

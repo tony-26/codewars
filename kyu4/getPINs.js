@@ -1,5 +1,3 @@
-const getPINs = (observed) => {};
-
 const getSingleDigit = (str) => {
   const pinPossibility = {
     1: "124",
@@ -18,20 +16,25 @@ const getSingleDigit = (str) => {
 // console.log(getSingleDigit("8")); //[5, 7, 8, 9, 0]
 // console.log(getSingleDigit("9")); //[6, 8, 9]
 
-const possiblePasswords = (str) => {
-  let arr = [];
-  let result = [];
-  for (let i = 0; i < str.length; i++) {
-    arr.push(getSingleDigit(str[i]));
+const getPINs = (str) => {
+  // const currentResult = ["56", "58", "59"];
+  console.log("method called");
+  if (str.length === 1) {
+    return getSingleDigit(str);
   }
-  for (let i = 0; i < arr[0].length; i++) {
-    for (let j = 0; j < arr[1].length; j++) {
-      let processingPin = arr[0][i].toString();
-      processingPin = processingPin + arr[1][j].toString();
+  const lastDigit = str[str.length - 1];
+  const newStr = str.substring(0, str.length - 1);
+  //return [lastDigit, newStr];
+  const digitPossibility = getSingleDigit(lastDigit);
+  const currentResult = getPINs(newStr);
+  const result = [];
+  for (let i = 0; i < digitPossibility.length; i++) {
+    for (let j = 0; j < currentResult.length; j++) {
+      let processingPin = currentResult[j] + digitPossibility[i].toString();
       result.push(processingPin);
-      processingPin.split("").pop();
     }
   }
   return result;
 };
-console.log(possiblePasswords("89")); //[56, 58, 59, 76,78, 79, 86, 88, 89 ,96, 98, 99,06, 08, 09]
+console.log(getPINs("01")); //
+//console.log(possiblePasswords("89")); //[56, 58, 59, 76,78, 79, 86, 88, 89 ,96, 98, 99,06, 08, 09]
