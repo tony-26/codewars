@@ -9,28 +9,33 @@ const shiftStartingRange = (list) => {
   }
 };
 
-const arr = [2, 3, 4, 5, 6, 7, 8, 9];
-const result = shiftStartingRange(arr);
-console.log(result, arr); //[2, 3, 4, 5], [7, 8, 9]
+// const arr = [2, 3, 4, 5, 6, 7, 8, 9];
+// const result = shiftStartingRange(arr);
+// console.log(result, arr); //[2, 3, 4, 5], [7, 8, 9]
+
+const addRangeToStr = (str, range) => {
+  if (range.length === 1) {
+    return str + "," + range[0];
+  }
+  if (range.length === 2) {
+    return str + "," + range[0] + "," + range[1];
+  }
+  return str + "," + range[0] + "-" + range[range.length - 1];
+};
+// console.log(addRangeToStr("1,2-5", [7, 8, 9]));
+// console.log(addRangeToStr("1,2-5", [7, 8]));
+// console.log(addRangeToStr("1,2-5", [7]));
 
 const rangeExtraction = (list) => {
-  //   let output = "";
-  //   let begin = list[0];
-  //   let end = list[0];
-  //   for (let i = 1; i < list.length; i++) {
-  //     if (list[i] === end + 1) {
-  //       end = list[i];
-  //     } else {
-  //       if (begin === end) {
-  //         output = output + begin + ",";
-  //       } else {
-  //         output += begin + "-" + end + ",";
-  //       }
-  //       begin = list[i + 1];
-  //       end = list[i + 1];
-  //     }
-  //   }
-  //   return output;
+  if (list.length === 0) {
+    return "";
+  }
+  let str = "";
+  while (list.length > 0) {
+    const startingRange = shiftStartingRange(list);
+    str = addRangeToStr(str, startingRange);
+  }
+  return str.slice(1);
 };
 //console.log(rangeExtraction([1, 2, 3])); //"1-3"
 //console.log(rangeExtraction([1, 2, 3, 5])); //"1-3,5"
