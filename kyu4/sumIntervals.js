@@ -1,16 +1,16 @@
-const sumIntervals = (intervals) => {};
-console.log(
-  sumIntervals([
-    [1, 2],
-    [6, 10],
-    [11, 15],
-  ])
-); //9
+// const sumIntervals = (intervals) => {};
+// console.log(
+//   sumIntervals([
+//     [1, 2],
+//     [6, 10],
+//     [11, 15],
+//   ])
+// ); //9
 const refactorIntervals = (intervals) => {
   let result = [];
   for (let i = 0; i < intervals.length; i++) {
     let current = intervals[i];
-    if (current[0] > result[result.length - 1][1] || result.length === 0) {
+    if (result.length === 0 || current[0] > result[result.length - 1][1]) {
       result.push(current);
     } else {
       result[result.length - 1][1] = Math.max(
