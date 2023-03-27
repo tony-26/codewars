@@ -1,8 +1,9 @@
 const sumDigits = (number) => {
   const digits = Math.abs(number).toString().split("");
-  return digits.reduce((pre, curr) => {
-    pre + Number(curr);
+  const sum = digits.reduce((accumulator, currentNum) => {
+    return accumulator + Number(currentNum);
   }, 0);
+  return sum;
 };
 console.log(sumDigits(10), 1);
 console.log(sumDigits(99), 18);
