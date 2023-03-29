@@ -3,7 +3,7 @@ const toCsvText = (array) => {
   for (let i = 0; i < array.length; i++) {
     result = result + array[i].join(",") + "\n";
   }
-  return result.slice(0, -2);
+  return result.slice(0, -1);
 };
 console.log(
   toCsvText([
