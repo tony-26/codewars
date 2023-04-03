@@ -11,8 +11,10 @@ const meeting = (s) => {
     if (a.firstName < b.firstName) return -1;
     if (a.firstName > b.firstName) return 1;
   });
-  let finalNames = nameArr.map((e) => e.lastName, e.finalName.join(","));
-  return finalNames;
+  let finalNames = nameArr.map(
+    (e) => `(${[e.lastName, e.firstName].join(", ")})`
+  );
+  return finalNames.join("");
 };
 console.log(
   meeting(
