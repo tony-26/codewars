@@ -17,11 +17,11 @@ const rgb = (r, g, b) => {
     if (arr[i] >= 0 && arr[i] <= 255) {
       let firstDigitR = Math.floor(arr[i] / 16);
       let remainingR = arr[i] - firstDigitR * 16;
-      //console.log(remainingR);
+
       if (firstDigitR >= 10) {
         firstDigitR = hex[firstDigitR];
       }
-      if (remainingR > 10) {
+      if (remainingR >= 10) {
         remainingR = hex[remainingR];
       }
       hexV = hexV + firstDigitR.toString() + remainingR.toString();
@@ -30,9 +30,10 @@ const rgb = (r, g, b) => {
 
   return hexV;
 };
-console.log(rgb(0, 0, 0), "000000");
-console.log(rgb(0, 0, -20), "000000");
-console.log(rgb(300, 255, 255), "FFFFFF");
-console.log(rgb(173, 255, 47)); //"ADFF2F"
+console.log(rgb(57, 186, 243)); //"39BAF3"
+// console.log(rgb(0, 0, 0), "000000");
+// console.log(rgb(0, 0, -20), "000000");
+// console.log(rgb(300, 255, 255), "FFFFFF");
+// console.log(rgb(173, 255, 47)); //"ADFF2F"
 
 // console.log(Math.floor(100 / 3));
