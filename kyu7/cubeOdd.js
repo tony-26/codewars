@@ -1,7 +1,7 @@
 function cubeOdd(arr) {
   let sum = arr[0] * arr[0] * arr[0];
   for (let i = 1; i < arr.length; i++) {
-    if (typeof arr[i] !== Number) {
+    if (typeof arr[i] !== "number") {
       return undefined;
     }
     if (arr[i] % 2 !== 0) {
