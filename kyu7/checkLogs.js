@@ -10,10 +10,11 @@ function checkLogs(log) {
     const prevTime = new Date(`1970-01-01T${log[i - 1]}`);
     const timeDiffInSeconds = (currTime - prevTime) / 1000;
 
-    if (timeDiffInSeconds >= 86400) {
+    if (timeDiffInSeconds < 0) {
       minDays++;
     }
   }
 
   return minDays;
 }
+console.log(checkLogs(["12:00:00", "23:59:59", "00:00:00"])); //2
