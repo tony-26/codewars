@@ -18,3 +18,4 @@ function checkLogs(log) {
   return minDays;
 }
 console.log(checkLogs(["12:00:00", "23:59:59", "00:00:00"])); //2
+console.log(checkLogs(["12:00:00", "12:00:00", "00:00:00"])); //3
