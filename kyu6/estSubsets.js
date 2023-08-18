@@ -7,7 +7,11 @@ const estSubsets = (arr) => {
   return sumSets;
 };
 
+
+
 console.log(estSubsets([1, 2, 3, 4], 15)); // 4 + 3 + 2 + 1 + 4 + 1
+// 1
+
 // console.log(estSubsets(["a", "b", "c", "d", "d"], 15));
 // console.log(estSubsets([2, 3, 4, 5, 5, 6, 6, 7, 8, 8], 127));
 // console.log(
