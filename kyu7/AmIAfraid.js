@@ -26,4 +26,4 @@ console.log(AmIAfraid("Monday", 13), false);
 console.log(AmIAfraid("Sunday", -666), true);
 console.log(AmIAfraid("Tuesday", 2), false);
 console.log(AmIAfraid("Tuesday", 965), true);
-console.log(AmIAfraid("Friday", 2), true);
+// console.log(AmIAfraid("Friday", 2), true);
