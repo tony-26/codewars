@@ -1,13 +1,15 @@
 const estSubsets = (arr) => {
-  let sumSets = 0;
-  for (let i = arr.length; i > 0; i--) {
-    sumSets += i;
-  }
-  sumSets += arr.length + 1;
-  return sumSets;
+  let seen = {};
+  let nonDupArr = [];
+  arr.forEach((element) => {
+    if (!seen[element]) {
+      nonDupArr.push(element);
+      seen[element] = true;
+    }
+  });
+  //equation: 2**n-1
+  return Math.pow(2, nonDupArr.length) - 1;
 };
-
-
 
 console.log(estSubsets([1, 2, 3, 4], 15)); // 4 + 3 + 2 + 1 + 4 + 1
 // 1
