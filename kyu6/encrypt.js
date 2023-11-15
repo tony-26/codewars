@@ -1,4 +1,6 @@
 const encrypt = (text, n) => {
+  if (n <= 0 || !text) return text;
+
   for (let i = 0; i < n; i++) {
     let odd = "";
     let even = "";
