@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,15 @@
     "url": "https://github.com/tony-26/codewars/issues"
   },
   "homepage": "https://github.com/tony-26/codewars#readme",
+
   "devDependencies": {
-    "mocha": "^10.1.0"
+    "chai": "^4.3.7",
+    "jest": "^29.5.0",
+    "mocha": "^10.2.0"
+  },
+  "type": "module",
+  
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

@@ -16,10 +16,7 @@ const secondsToMinutes = (seconds) => {
   if (minutes === 1) {
     if (remainingSeconds === 1) {
       return minutes + " minute " + "and " + remainingSeconds + " second";
-    } 
-    
-    
-    else {
+    } else {
       return minutes + " minute " + "and " + remainingSeconds + " seconds";
     }
   } else {
@@ -99,3 +96,4 @@ console.log(formatDuration(120));
 // console.log(formatDuration(120), "2 minutes");
 // console.log(formatDuration(3600), "1 hour");
 // console.log(formatDuration(3662), "1 hour, 1 minute and 2 seconds");
+module.exports = { formatDuration };
